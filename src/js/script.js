@@ -2,9 +2,9 @@
 
 const app = {
     matrix: [
-        ['1', '2', '3'],
-        ['4', '5', '6'],
-        ['7', '8', '9']
+        [' ', ' ', ' '],
+        [' ', ' ', ' '],
+        [' ', ' ', ' ']
     ],
     $element: document.querySelector('[data-js="tik-tak-toe"]'),
     labels: ['X', 'O'],
@@ -12,6 +12,10 @@ const app = {
 }
 
 console.log(app)
+
+const startNewGame = () => {
+    renderMatrix()
+}
 
 const renderMatrix = () => {
     app.$element.innerHTML = 
@@ -30,5 +34,5 @@ const setValueOnMatrix = (row, column) =>
     [...app.matrix][row][column] = app.labels[app.currentLabel]
 
 window.addEventListener('load', () => {
-    renderMatrix()
+    startNewGame()
 })
