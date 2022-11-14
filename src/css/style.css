@@ -23,13 +23,42 @@ h1 {
     font-size: 4rem;
     font-weight: 700;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-[data-js="tik-tak-toe"] div div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
+[data-js="tik-tak-toe"] .row {
+    display: grid;
+    grid-template-columns: 5rem;
+    text-align: center;
+}
+
+[data-js="tik-tak-toe"] .row:not(:last-child) {
+    border-right: solid 3px #d9d9d9;
+}
+
+[data-js="tik-tak-toe"] .row .column:not(:last-child) {
+    border-bottom: solid 3px #d9d9d9;
+}
+
+[data-js="tik-tak-toe"] .row .column {
+    height: 5rem;
+    line-height: 5rem;
+}
+
+[data-js="tik-tak-toe"] .row .column.circle {
+    color: #DB504A;
+}
+
+[data-js="tik-tak-toe"] .row .column.cross {
+    color: #084B83;
+}
+
+[data-js="tik-tak-toe"] .row .column.empty {
+    cursor: pointer;
+}
+
+[data-js="tik-tak-toe"] .row .column.circle,
+[data-js="tik-tak-toe"] .row .column.cross {
+    cursor: not-allowed;
 }
